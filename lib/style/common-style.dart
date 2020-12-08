@@ -10,7 +10,8 @@ abstract class CommonStyle {
   static Color colorGreyText = Color(0xff6E7985);
   static Color colorBlackText = Color(0xff253647);
   static Color colorPink = Color(0xffF8D6DF);
-
+  static Color redColor = Color(0xFFD62C2C);
+  static Color darkBlueColor = Color(0xFF0045BB);
 
   static TextStyle textBoldSize_12 = TextStyle(
     fontSize: 12,
@@ -52,15 +53,25 @@ abstract class CommonStyle {
 
   static TextStyle textBoldSize_18 = TextStyle(
     fontSize: 18,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.bold,
     color: CommonStyle.colorBlackText,
     decoration: TextDecoration.none,
   );
   static TextStyle textSize_18 = TextStyle(
     fontSize: 18,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w300,
     color: CommonStyle.colorBlackText,
     decoration: TextDecoration.none,
   );
-
+  static TextStyle hintTextSize14 = TextStyle(
+    color: colorBlue,
+    fontSize: 14,
+    fontWeight: FontWeight.w300,
+  );
+  static TextStyle textSize22 = TextStyle(
+    color: colorBlackText,
+    fontSize: 22,
+    fontWeight: FontWeight.w300,
+    fontFamily: 'SemiBold',
+  );
 }
