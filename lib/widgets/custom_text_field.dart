@@ -15,7 +15,7 @@ class CustomTextField extends StatelessWidget {
   Widget suffixIcon;
   BorderSide borderSide = BorderSide.none;
 
-  CustomTextField({this.isPass, this.style, this.inputType, this.hintText, this.fillColor, this.hintStyle, this.prefixIcon, this.contentPadding, this.suffixIcon});
+  CustomTextField({this.isPass, this.style, this.inputType, this.hintText, this.fillColor, this.hintStyle, this.prefixIcon, this.contentPadding, this.suffixIcon, this.borderSide});
 
   @override
   Widget build(BuildContext context) {

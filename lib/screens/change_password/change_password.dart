@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import '../../style/common-style.dart';
 import '../../style/common-style.dart';
 import '../../style/common-style.dart';
+import '../../style/common-style.dart';
+import '../../style/common-style.dart';
 import '../../utils/custom_scroll_view.dart';
 
 class ChangePassWord extends StatelessWidget {
@@ -39,8 +41,13 @@ class ChangePassWord extends StatelessWidget {
               ),
               CustomTextField(
                 hintText: 'Enter password',
-                style: CommonStyle.hintTextSize14.copyWith(color: CommonStyle.colorGrey),
+                style: CommonStyle.hintTextSize14.copyWith(color: CommonStyle.colorGreyText),
                 contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                fillColor: CommonStyle.colorWhite,
+                borderSide: BorderSide(
+                  width: 0.1,
+                  color: Colors.transparent
+                ),
               ),
             ],
           ),
