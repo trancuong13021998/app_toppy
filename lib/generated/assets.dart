@@ -3,5 +3,10 @@ class Assets {
   Assets._();
 
   static const String iconsIcHome = 'assets/icons/ic_home.svg';
+  static const String iconsIcMyPage = 'assets/icons/ic_my_page.svg';
+  static const String iconsIcNotification = 'assets/icons/ic_notification.svg';
+  static const String iconsIcSearch = 'assets/icons/ic_search.svg';
+  static const String imagesImg1 = 'assets/images/img1.jpg';
+  static const String imagesTrump = 'assets/images/trump.jpg';
 
 }
