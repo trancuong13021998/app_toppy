@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../style/common-style.dart';
+import '../style/common-style.dart';
 
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
@@ -14,8 +15,10 @@ class CustomTextField extends StatelessWidget {
   EdgeInsets contentPadding = EdgeInsets.symmetric(vertical: 10, horizontal: 10);
   Widget suffixIcon;
   BorderSide borderSide = BorderSide.none;
+  Function validator;
+  TextEditingController controller;
 
-  CustomTextField({this.isPass, this.style, this.inputType, this.hintText, this.fillColor, this.hintStyle, this.prefixIcon, this.contentPadding, this.suffixIcon, this.borderSide});
+  CustomTextField({this.isPass, this.style, this.inputType, this.hintText, this.fillColor, this.hintStyle, this.prefixIcon, this.contentPadding, this.suffixIcon, this.borderSide, this.validator, this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +29,26 @@ class CustomTextField extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       alignment: Alignment.center,
       child: TextFormField(
+        controller: controller,
         style: style,
         keyboardType: inputType,
+        validator: validator,
+        obscureText: isPass == null ? false : isPass,
+        cursorColor: Colors.black,
+        cursorHeight: 20,
         decoration: InputDecoration(
           fillColor: fillColor,
           filled: true,
-          hintText: hintText,
-          hintStyle: hintStyle,
+          hintText: hintText == null ? '' : hintText,
+          hintStyle: hintStyle == null ? CommonStyle.hintTextSize14.copyWith(color: CommonStyle.colorGreyText) : hintStyle,
           focusColor: Colors.black,
           prefixIcon: prefixIcon == null ? null : prefixIcon,
-          contentPadding: contentPadding,
+          contentPadding: contentPadding == null ? EdgeInsets.symmetric(vertical: 10, horizontal: 10) : contentPadding,
           suffixIcon: suffixIcon == null ? null : suffixIcon,
           errorMaxLines: 3,
           errorBorder: _borderInput(CommonStyle.redColor),
-          focusedBorder: _borderInput(CommonStyle.colorSelectItemNavigation),
           errorStyle: CommonStyle.textSize_12.copyWith(color: CommonStyle.redColor),
-          border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30)), borderSide: borderSide),
+          border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30)), borderSide: borderSide == null ? BorderSide.none : borderSide),
         ),
       ),
     );
