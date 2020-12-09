@@ -27,13 +27,14 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: CommonStyle.colorSelectItemNavigation,
       body: CommonScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           alignment: Alignment.center,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-          color: CommonStyle.colorSelectItemNavigation,
+          color: Colors.transparent,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,

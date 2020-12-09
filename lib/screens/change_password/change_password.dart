@@ -4,8 +4,6 @@ import 'package:app_toppy/widgets/custom_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../style/common-style.dart';
-import '../../style/common-style.dart';
-import '../../style/common-style.dart';
 import '../../utils/custom_scroll_view.dart';
 
 // ignore: must_be_immutable
@@ -21,12 +19,17 @@ class ChangePassWord extends StatelessWidget {
       backgroundColor: Color(0xFFF1F1F1),
       extendBodyBehindAppBar: false,
       appBar: AppBar(
-        backgroundColor: Color(0xFFF1F1F1),
+        backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: Icon(
-          Icons.arrow_back_outlined,
-          color: Colors.black,
-          size: 30,
+        leading: InkWell(
+          onTap: (){
+            Navigator.of(context).pop(true);
+          },
+          child: Icon(
+            Icons.arrow_back_outlined,
+            color: Colors.black,
+            size: 30,
+          ),
         ),
       ),
       body: CommonScrollView(
@@ -42,7 +45,7 @@ class ChangePassWord extends StatelessWidget {
                   child: Text(
                     'Change password',
                     style: CommonStyle.textSize22.copyWith(
-                      fontSize: 30,
+                      fontSize: 26,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
@@ -96,53 +99,56 @@ class ChangePassWord extends StatelessWidget {
                 SizedBox(
                   height: 25,
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: CustomButton(
-                        onTap: () {
-                          if (_formChangePass.currentState.validate()) {
-                            if (newPassController.text == confirmPassController.text) {
-                              SnackBarBuilder.snackBarNotification(
-                                context,
-                                'Change password success',
-                                CommonStyle.colorSelectItemNavigation,
-                                CommonStyle.colorWhite,
-                              );
-                            } else {
-                              SnackBarBuilder.snackBarNotification(
-                                context,
-                                'Confirm pass must be the same as the new pass',
-                                CommonStyle.colorSelectItemNavigation,
-                                CommonStyle.colorWhite,
-                              );
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: CustomButton(
+                          onTap: () {
+                            if (_formChangePass.currentState.validate()) {
+                              if (newPassController.text == confirmPassController.text) {
+                                SnackBarBuilder.snackBarNotification(
+                                  context,
+                                  'Change password success',
+                                  CommonStyle.colorSelectItemNavigation,
+                                  CommonStyle.colorWhite,
+                                );
+                              } else {
+                                SnackBarBuilder.snackBarNotification(
+                                  context,
+                                  'Confirm pass must be the same as the new pass',
+                                  CommonStyle.colorSelectItemNavigation,
+                                  CommonStyle.colorWhite,
+                                );
+                              }
                             }
-                          }
-                        },
-                        height: 45.0,
-                        colorButton: CommonStyle.colorSelectItemNavigation,
-                        child: Text(
-                          'Change',
-                          style: CommonStyle.textBoldSize_16.copyWith(color: CommonStyle.colorWhite),
+                          },
+                          height: 45.0,
+                          colorButton: CommonStyle.colorSelectItemNavigation,
+                          child: Text(
+                            'Change',
+                            style: CommonStyle.textBoldSize_16.copyWith(color: CommonStyle.colorWhite),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Expanded(
-                      child: CustomButton(
-                        onTap: () {},
-                        height: 45.0,
-                        colorButton: CommonStyle.redColor,
-                        child: Text(
-                          'Cancel',
-                          style: CommonStyle.textBoldSize_16.copyWith(color: CommonStyle.colorWhite),
-                        ),
+                      SizedBox(
+                        width: 30,
                       ),
-                    )
-                  ],
+                      Expanded(
+                        child: CustomButton(
+                          onTap: () {},
+                          height: 45.0,
+                          colorButton: CommonStyle.redColor,
+                          child: Text(
+                            'Cancel',
+                            style: CommonStyle.textBoldSize_16.copyWith(color: CommonStyle.colorWhite),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
@@ -157,7 +163,7 @@ class ChangePassWord extends StatelessWidget {
       padding: EdgeInsets.only(left: 10, bottom: 10),
       child: Text(
         title,
-        style: CommonStyle.textBoldSize_16.copyWith(color: Colors.black, fontWeight: FontWeight.w500),
+        style: CommonStyle.textBoldSize_14.copyWith(color: Colors.black, fontWeight: FontWeight.w500),
       ),
     );
   }

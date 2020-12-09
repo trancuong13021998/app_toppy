@@ -40,7 +40,7 @@ class CustomTextField extends StatelessWidget {
           fillColor: fillColor,
           filled: true,
           hintText: hintText == null ? '' : hintText,
-          hintStyle: hintStyle == null ? CommonStyle.hintTextSize14.copyWith(color: CommonStyle.colorGreyText) : hintStyle,
+          hintStyle: hintStyle == null ? CommonStyle.textSize_12.copyWith(color: CommonStyle.colorGreyText) : hintStyle,
           focusColor: Colors.black,
           prefixIcon: prefixIcon == null ? null : prefixIcon,
           contentPadding: contentPadding == null ? EdgeInsets.symmetric(vertical: 10, horizontal: 10) : contentPadding,
