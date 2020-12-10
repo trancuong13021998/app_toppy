@@ -13,6 +13,12 @@ abstract class CommonStyle {
   static Color redColor = Color(0xFFD62C2C);
   static Color darkBlueColor = Color(0xFF0045BB);
 
+  static BoxShadow defaultShadow = BoxShadow(
+    offset: Offset(10, 5),
+    blurRadius: 27,
+    color: Colors.black12, // Black color with 12% opacity
+  );
+
   static TextStyle textBoldSize_12 = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.bold,

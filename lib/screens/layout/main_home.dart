@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
       case 1:
         return HomePage();
       case 2:
-        return ChangePassWord();
+        return HomePage();
       case 3:
         return NotificationPage();
     }

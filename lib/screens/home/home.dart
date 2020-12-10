@@ -18,23 +18,11 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: CommonStyle.colorBackground,
       appBar: AppBar(title: Center(child: new Text('Home', textAlign: TextAlign.center)),
       ),
-      body:CommonScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 5),
-            ItemHome(CommonStyle.colorPink),
-            SizedBox(height: 8),
-            ItemHome(CommonStyle.colorBlue),
-            SizedBox(height: 8),
-            ItemHome(CommonStyle.colorWhite),
-            SizedBox(height: 8),
-            ItemHome(CommonStyle.colorWhite),
-            SizedBox(height: 8),
-            ItemHome(CommonStyle.colorWhite),
-            SizedBox(height: 80),
-          ],
-        ),
-      ),
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(margin: EdgeInsets.only(top: 20, left: 10, right: 10),child: ItemHome(CommonStyle.colorWhite),);
+        },),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
         tooltip: 'Increment',
